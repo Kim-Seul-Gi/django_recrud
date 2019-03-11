@@ -1,0 +1,7 @@
+<h1>new 창입니다. 새로 만드세요</h1>
+<form action='/boards/create/', method="POST">
+    {% csrf_token %}
+    title:<input type='text', name='title'>
+    content:<input type='text', name='content'>
+    <input type='submit'>
+</form>
