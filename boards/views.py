@@ -15,8 +15,8 @@ def create(request):
     board.title = request.POST.get('title')
     board.content = request.POST.get('content')
     board.save()
-    return redirect('/boards/')
-    
+    return redirect('boards:detail', board.pk) # redirect('/boards/') 와 같은 의미이다. 왜냐하면 boards/urls.py 에서 name으로 정의했으므로
+     
 def detail(request, pk):
     board=Board.objects.get(pk=pk)
     return render(request, 'boards/detail.html', {'board':board})
@@ -31,7 +31,7 @@ def update(request, pk):
     board.title = request.GET.get('title')
     board.content = request.GET.get('content')
     board.save()
-    return redirect('/boards/')
+    return redirect('boards:detail', board.pk)
     
 def delete(request, pk):
     board=Board.objects.get(pk=pk)
