@@ -36,6 +36,6 @@ def update(request, pk):
 def delete(request, pk):
     board=Board.objects.get(pk=pk)
     board.delete()
-    return redirect('/boards/')
+    return redirect('boards:index')
     
 
