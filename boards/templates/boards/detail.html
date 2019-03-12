@@ -8,6 +8,13 @@ content : {{board.content}}
 
 <hr>
 
+<p>댓글 작성</p>
+<form action="{% url 'boards:comments_create' board.pk %}", method="POST">
+    {% csrf_token %}
+    <input type='text', name='content'>
+    <input type='submit'>
+</form>
+
 {% for comment in comments %}
 <li>
     {{comment.content}}
