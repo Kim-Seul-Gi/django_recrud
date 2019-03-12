@@ -6,3 +6,11 @@ content : {{board.content}}
 <a href="{% url 'boards:edit' board.pk %}">다른 편집</a>
 <a href="{% url 'boards:index' %}">목록으로 돌아가기</a>
 
+<hr>
+
+{% for comment in comments %}
+<li>
+    {{comment.content}}
+    {{comment}}
+</li>
+{% endfor %}

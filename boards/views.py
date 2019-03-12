@@ -35,7 +35,10 @@ def new(request):
      
 def detail(request, pk):
     board=Board.objects.get(pk=pk)
-    return render(request, 'boards/detail.html', {'board':board})
+    comments = board.comment_set.all()
+
+    # 다수의 comments를 가져오기 위해서 board 아이디에 해당하는 모든 comment들을 가져옴.
+    return render(request, 'boards/detail.html', {'board':board, 'comments':comments})
     
 def edit(request, pk):
     if request.method == 'POST': # 기존의 update 역할
