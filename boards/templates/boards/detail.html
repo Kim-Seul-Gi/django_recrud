@@ -19,5 +19,9 @@ content : {{board.content}}
 <li>
     {{comment.content}}
     {{comment}}
+<form action="{% url 'boards:comments_delete' board.pk comment.pk %}", method="POST">
+    {% csrf_token %}
+    <input type='submit' value='삭제'>
+</form>
 </li>
 {% endfor %}
