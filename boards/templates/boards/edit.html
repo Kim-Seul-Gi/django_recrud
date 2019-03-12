@@ -1,5 +1,6 @@
 <h1>edit 창입니다. 네 그렇습니다.</h1>
-<form action='{% url 'boards:update' board.pk %}'>
+<form action='{% url 'boards:edit' board.pk %}', method="POST">
+    {% csrf_token %}
     <input type='text', name='title', value={{board.title}}>
     <input type='text', name='content', value={{board.content}}>
     <input type='submit'>

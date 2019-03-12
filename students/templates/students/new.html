@@ -1,0 +1,9 @@
+new 창입니다.
+<form method='POST'>
+    {% csrf_token %}
+    name:<input type="text", name='name'>
+    email:<input type="text", name='email'>
+    birthday:<input type='date', name='birthday'>
+    age:<input type='integer', name='age'>
+    <input type='submit'>
+</form>

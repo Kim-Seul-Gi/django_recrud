@@ -1,5 +1,5 @@
 <h1>new 창입니다. 새로 만드세요</h1>
-<form action='{% url 'boards:create' %}', method="POST">
+<form action='{% url 'boards:new' %}', method="POST">
     {% csrf_token %}
     title:<input type='text', name='title'>
     content:<input type='text', name='content'>
