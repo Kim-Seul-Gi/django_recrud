@@ -121,3 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# 기본으로 INSTALLED_APPS 아래 있는 static 디렉토리를 탐색
+
+# 추가적인 디렉토리를 활용하려면 아래와 같이 작성
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'assets'),    
+]
+
