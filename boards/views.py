@@ -21,6 +21,7 @@ def new(request):
         board=Board()
         board.title = request.POST.get('title')
         board.content = request.POST.get('content')
+        board.image = request.FILES.get('image')
         board.save()
         return redirect('boards:detail', board.pk) # redirect('/boards/') 와 같은 의미이다. 왜냐하면 boards/urls.py 에서 name으로 정의했으므로
     else: # get 형식으로 햇으면 아무것도 하지않는다.(기존의 new 역할)

@@ -1,7 +1,11 @@
 <h1>new 창입니다. 새로 만드세요</h1>
-<form action='{% url 'boards:new' %}', method="POST">
+<!-- file을 upload하기 위해서는 form에 enctype를 설정해줘야 한다.-->
+<!-- 기본값은 application/x-www-form-urlencoded 이다.-->
+<form action='{% url 'boards:new' %}' method="POST" enctype='multipart/form-data'>
     {% csrf_token %}
     title:<input type='text', name='title'>
     content:<input type='text', name='content'>
+    <!-- accept는 어떠한 파일을 받을 것인지, 형식을 제한하는 역할이다. -->
+    <input type='file' name='image' accept='image/*'><br>
     <input type='submit'>
 </form>

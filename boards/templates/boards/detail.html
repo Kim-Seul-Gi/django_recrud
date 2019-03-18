@@ -1,10 +1,14 @@
 <h1>detail 창입니다. id와 title, content를 보여줄 겁니다.</h1>
 pk : {{board.pk}}<br>
 title : {{board.title}}<br>
-content : {{board.content}}
+content : {{board.content}}<br>
+
+image : <img src={{board.image.url}}><br>
+
 <a href='/boards/{{board.pk}}/edit'>편집하러가기</a>
 <a href="{% url 'boards:edit' board.pk %}">다른 편집</a>
 <a href="{% url 'boards:index' %}">목록으로 돌아가기</a>
+
 
 <hr>
 
